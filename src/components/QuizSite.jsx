@@ -71,11 +71,18 @@ const QuizSite = () => {
         }
     };
 
+    const handleRestartQuiz = () => {
+        setCurrentQuestion(0);
+        setScore(0);
+        setShowScore(false);
+    };
+
     return (
         <div>
             {showScore ? (
                 <div>
                     <h2>Ваш результат: {score} із {quizQuestions.length}</h2>
+                    <button onClick={handleRestartQuiz}>Почати знову</button>
                 </div>
             ) : (
                 <div>
@@ -94,4 +101,3 @@ const QuizSite = () => {
 };
 
 export default QuizSite;
-
